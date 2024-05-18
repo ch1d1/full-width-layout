@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: "poppins";
+}
+:root {
+  --bg--color: #323230;
+  --tx--gb: #eeeee7;
+  --tx--color: #a8a8a8;
+  --line--height: 2em;
+  --font--size: 3em;
+}
+
+img {
+  width: 400px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  min-height: 100%;
+}
+
+/* welcome panel */
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.panel.welcome {
+  background: var(--bg--color);
+  grid-auto-rows: 1fr;
+  padding: 30px 60px;
+}
+
+.panel.welcome nav a {
+  text-decoration: none;
+  color: var(--tx--color);
+  margin: 20px;
+}
+
+.panel.welcome p {
+  color: var(--tx--color);
+  max-width: 540px;
+  line-height: var(--line--height);
+}
+.panel.welcome h1 {
+  color: var(--tx--color);
+  font-size: 3em;
+}
+
+.panel.welcome footer {
+  align-self: end;
+  color: var(--tx--color);
+}
+
+/* about */
+
+.panel.about {
+  grid-template-rows: 3fr 1fr;
+  overflow: hidden;
+}
+
+.panel.about img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.panel .text {
+  background: var(--tx--gb);
+  padding: 30px 60px;
+}
+
+/* .photos */
+.panel.photos {
+  grid-template-rows: 1fr 3fr;
+  overflow: hidden;
+}
+.panel.photos img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* responsive */
+@media screen and (max-width: 1400px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+  .panel.photos {
+    grid-column: span 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: 500px 400px 400px;
+  }
+
+  .panel.about {
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .panel img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  main {
+    grid-template-rows: 700px 600px 600px;
+  }
+  .panel.about, .panel.photos{
+    grid-template-columns: 1fr;
+    grid-column: span 1;
+    grid-template-rows: 1fr 1fr;
+    border-bottom: 1px solid #dcdcdc;
+  }
+
+  .panel .text{
+    grid-row: 1;
+  }
+
+}
